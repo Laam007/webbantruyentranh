@@ -1,0 +1,27 @@
+/* Làm thanh navbar phủ kín chiều ngang và có nền chuyển màu */
+nav.navbar {
+    width: 100%;
+    position: fixed; /* giữ cố định trên đầu */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, #ff512f, #ff416c); /* màu đỏ cam hồng */
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Xóa khoảng trắng của body để màu dính sát mép trên */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Chừa khoảng trống phía trên nội dung để không bị che */
+main, .content {
+    padding-top: 90px;
+}
+
+/* Khi rê chuột vào link */
+.nav-link:hover {
+    text-decoration: underline;
+}

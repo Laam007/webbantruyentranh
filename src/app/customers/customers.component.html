@@ -1,0 +1,213 @@
+<div class="p-0">
+  <h2 class="text-lg font-bold mb-2">Quản lý khách hàng</h2>
+  <table class="table table-bordered align-middle">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border p-2">ID</th>
+        <th class="border p-2">Tên đăng nhập</th>
+        <th class="border p-2">Mật khẩu</th>
+        <th class="border p-2">Họ và tên</th>
+        <th class="border p-2">Số điện thoại</th>
+        <th class="border p-2">Email</th>
+        <th class="border p-2">Địa chỉ</th>
+        <th class="border p-2">Mở khóa</th>
+        <th class="border p-2" style="width: 150px">Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers()">
+        <td class="border p-2 text-center">{{ customer.id }}</td>
+        <td class="border p-2 text-center">
+          <input
+            type="text"
+            class="form-control"
+            name="username0"
+            [(ngModel)]="customer.username"
+            [disabled]="editingId() !== customer.id"
+          />
+        </td>
+        <td class="border p-2" style="position: relative">
+          <form>
+            <input
+              type="text"
+              [value]="customer.username"
+              name="hidden-username-{{ customer.id }}"
+              style="display: none"
+              tabindex="-1"
+              aria-hidden="true"
+              autocomplete="username"
+            />
+            <input
+              [type]="showPasswords()[customer.id!] ? 'text' : 'password'"
+              class="form-control"
+              [(ngModel)]="customer.password"
+              name="password"
+              autocomplete="new-password"
+              [disabled]="editingId() !== customer.id"
+              style="padding-right: 30px"
+            />
+            <span
+              (click)="togglePasswordVisibility(customer.id!)"
+              style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer;"
+            >
+              <i class="{{ showPasswords()[customer.id!] ? 'bi bi-eye-slash' : 'bi bi-eye' }}"></i>
+            </span>
+          </form>
+        </td>
+        <td class="border p-2">
+          <input
+            type="text"
+            class="form-control"
+            name="fullname"
+            [(ngModel)]="customer.fullname"
+            [disabled]="editingId() !== customer.id"
+          />
+        </td>
+        <td class="border p-2">
+          <input
+            type="text"
+            class="form-control"
+            name="phone"
+            [(ngModel)]="customer.phone"
+            [disabled]="editingId() !== customer.id"
+          />
+        </td>
+        <td class="border p-2">
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            [(ngModel)]="customer.email"
+            [disabled]="editingId() !== customer.id"
+          />
+        </td>
+        <td class="border p-2">
+          <input
+            type="text"
+            class="form-control"
+            name="address"
+            [(ngModel)]="customer.address"
+            [disabled]="editingId() !== customer.id"
+          />
+        </td>
+        <td class="text-center">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="islocked"
+            [(ngModel)]="customer.islocked"
+            [disabled]="editingId() !== customer.id"
+          />
+        </td>
+        <td class="border p-2 text-center">
+          <ng-container *ngIf="editingId() === customer.id; else notEditing">
+            <button
+              (click)="updateCustomer()"
+              class="btn btn-sm btn-info text-white px-2 py-0 rounded"
+            >
+              Lưu
+            </button>
+            <button
+              (click)="cancelEdit()"
+              class="btn btn-secondary btn-sm text-white px-2 py-0 rounded ml-2"
+            >
+              Hủy
+            </button>
+          </ng-container>
+          <ng-template #notEditing>
+            <button
+              (click)="editCustomer(customer.id!)"
+              class="btn btn-warning btn-sm text-white px-2 py-0 rounded"
+            >
+              Sửa
+            </button>
+            <button
+              (click)="deleteCustomer(customer.id!)"
+              class="btn btn-danger btn-sm text-white px-2 py-0 rounded ml-2"
+            >
+              Xóa
+            </button>
+          </ng-template>
+        </td>
+      </tr>
+
+      <!-- hàng thêm khách hàng mới -->
+      <tr>
+        <td class="border p-2 text-center">Mới</td>
+        <td class="border p-2">
+          <input
+            type="text"
+            class="form-control"
+            name="username1"
+            [(ngModel)]="newCustomer.username"
+          />
+        </td>
+        <td style="position: relative">
+          <form>
+            <input
+              type="text"
+              [value]="newCustomer.username"
+              name="hidden-username-1"
+              style="display: none"
+              tabindex="-1"
+              aria-hidden="true"
+              autocomplete="username"
+            />
+            <input
+              [type]="showPasswords()['new'] ? 'text' : 'password'"
+              class="form-control"
+              [(ngModel)]="newCustomer.password"
+              style="padding-right: 30px"
+              name="password"
+              autocomplete="new-password"
+            />
+            <span
+              (click)="togglePasswordVisibility('new')"
+              style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer;"
+            >
+              <i class="{{ showPasswords()['new'] ? 'bi bi-eye-slash' : 'bi bi-eye' }}"></i>
+            </span>
+          </form>
+        </td>
+        <td class="border p-2">
+          <input
+            type="text"
+            class="form-control"
+            name="fullname"
+            [(ngModel)]="newCustomer.fullname"
+          />
+        </td>
+        <td class="border p-2">
+          <input type="text" class="form-control" name="phone" [(ngModel)]="newCustomer.phone" />
+        </td>
+        <td class="border p-2">
+          <input type="text" class="form-control" name="email" [(ngModel)]="newCustomer.email" />
+        </td>
+        <td class="border p-2">
+          <input
+            type="text"
+            class="form-control"
+            name="address"
+            [(ngModel)]="newCustomer.address"
+          />
+        </td>
+        <td class="text-center">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="islocked"
+            [(ngModel)]="newCustomer.islocked"
+          />
+        </td>
+        <td class="border p-2 text-center">
+          <button
+            (click)="addCustomer()"
+            class="btn btn-sm btn-primary text-white px-2 py-0 rounded"
+          >
+            Thêm
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,72 @@
+<div class="container my-4">
+  <h2 class="mb-3 text-center">Danh sách đơn hàng</h2>
+
+  <div class="table-responsive-md">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Mã đơn hàng</th>
+          <th>Người đặt hàng</th>
+          <th>Sản phẩm</th>
+          <th>Tổng tiền</th>
+          <th>Trạng thái</th>
+          <th>Địa chỉ giao hàng</th>
+          <th>Ngày tạo</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (order of orders(); track order.id) {
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.fullname }} - {{ order.userId }}</td>
+
+          <td>
+            <ul class="list-unstyled mb-0">
+              @for (item of order.items; track $index) {
+              <li>
+                <b>{{ getBookTitle(item.productId) }}</b><br />
+                SL: {{ item.quantity }} |
+                Giá: {{ item.price | number }} đ
+              </li>
+              }
+            </ul>
+          </td>
+
+          <td><b>{{ order.total | number }} đ</b></td>
+
+          <td>
+            <select
+              class="form-select"
+              [(ngModel)]="order.status"
+              (change)="updateStatus(order.id, order.status)">
+              <option value="Đang xử lý">Đang xử lý</option>
+              <option value="Đã giao hàng">Đã giao hàng</option>
+              <option value="Hủy đơn hàng">Hủy đơn hàng</option>
+            </select>
+          </td>
+
+          <td>
+            <ng-container *ngIf="getUserInfo(order.userId) as user">
+              <div><b>Email:</b> {{ user.email }}</div>
+              <div><b>Địa chỉ:</b> {{ user.address }}</div>
+              <div><b>Điện thoại:</b> {{ user.phone }}</div>
+            </ng-container>
+          </td>
+
+          <td>{{ order.createdAt | date: 'dd/MM/yyyy' }}</td>
+
+          <td>
+            <button
+              class="btn btn-danger btn-sm"
+              (click)="deleteOrder(order.id)">
+              🗑️ Xóa
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

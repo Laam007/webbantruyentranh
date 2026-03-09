@@ -1,0 +1,106 @@
+<div class="container">
+  <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button
+        *ngFor="let item of items; let i = index"
+        type="button"
+        data-bs-target="#carouselId"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="'Slide ' + (i + 1)">
+      </button>
+    </div>
+
+    <div class="carousel-inner" role="listbox">
+      <div
+        class="carousel-item"
+        *ngFor="let item of items; let first = first"
+        [class.active]="first">
+        <img [src]="item.image" class="w-100 d-block img-fluid" loading="eager" alt="Slide image">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!---Danh mục-->
+  <div class="mt-3">
+    <button
+      class="btn btn-danger"
+      (click)="selectCategory('TẤT CẢ TRUYỆN')"
+      style="background-color: #DC0000; padding: 10px 20px; font-size: 16px; color: white; border-radius: 5px;">
+      TẤT CẢ TRUYỆN
+    </button>
+
+    <div class="category-wrapper">
+      <div
+        class="category-item"
+        *ngFor="let category of categories.slice(1)"
+        [ngClass]="{'active': category.name === selectedCategory}"
+        (click)="selectCategory(category.name)">
+        <img width="60%" [src]="category.icon" alt="">
+        <p>{{category.name}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!----EBOOK-->
+  <div class="row mb-2">
+    <div class="row row-cols-1 row-cols-lg-4 gy-3">
+      <div class="col" *ngFor="let book of books">
+        <a [routerLink]="['/book', book.id]" style="text-decoration: none;">
+          <div class="card h-100">
+            <img class="card-img-top" [src]="book.image" alt="{{book.title}}" />
+            <div class="card-body">
+              <h5 class="book-title">{{ book.title }}</h5>
+              <p class="card-text">Tác giả: {{ book.author }}</p>
+              <div class="price">
+                {{ discountPrice(book.price, book.discount).toLocaleString() }} đ
+                <span class="discount-badge">-{{ book.discount }}%</span>
+              </div>
+              <div class="old-price">{{ book.price.toLocaleString() }} đ</div>
+              <div class="publish-date">Năm xuất bản: {{ book.publishDate }}</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ PHÂN TRANG -->
+<nav>
+  <ul class="pagination justify-content-center" style="display: flex">
+    <li class="page-item" [class.disabled]="currentPageValue === 1">
+      <button class="page-link" (click)="setCurrentPage(currentPageValue - 1)">Previous</button>
+    </li>
+
+    <li *ngFor="let page of getPagination()"
+        class="page-item"
+        [class.active]="currentPageValue === page"
+        [class.disabled]="page === '...'">
+      <button class="page-link" (click)="setCurrentPage(page)">{{ page }}</button>
+    </li>
+
+    <li class="page-item" [class.disabled]="currentPageValue === totalPagesValue">
+      <button class="page-link" (click)="setCurrentPage(currentPageValue + 1)">Next</button>
+    </li>
+  </ul>
+</nav>
+
+
+  <!----CÂU NÓI HAY-->
+  <div class="quote-box">
+    <p class="quote-text">
+“Trong thế giới truyện tranh, không có gì là không thể — chỉ cần bạn dám tưởng tượng.”
+(MangaStore)
+    </p>
+  </div>
+</div>

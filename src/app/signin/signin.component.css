@@ -1,0 +1,39 @@
+/* CARD LOGIN 1 MÀU */
+.animated-login {
+  background-color: #f5f7fb; /* xanh xám rất dịu mắt */
+  border-radius: 1rem;
+  padding: 0; /* giữ padding gốc của bạn */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease;
+}
+
+/* TEXT */
+.animated-login h2,
+.animated-login label {
+  color: #2c3e50;
+}
+
+.animated-login p,
+.animated-login a {
+  color: #555;
+}
+
+/* INPUT */
+.animated-login .form-control {
+  background: #ffffff;
+  color: #333;
+}
+
+.animated-login .form-control::placeholder {
+  color: #aaa;
+}
+
+/* LINK */
+.animated-login a {
+  text-decoration: underline;
+}
+
+/* HOVER RẤT NHẸ */
+.animated-login:hover {
+  transform: translateY(-1px);
+}

@@ -1,0 +1,113 @@
+<div class="dashboard-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      <span>📚 Manga</span><strong>Store</strong>
+    </div>
+
+    <ul class="menu">
+      <li class="active">
+        <i class="bi bi-speedometer2"></i>
+        <span>Bảng điều khiển</span>
+      </li>
+
+      <li [routerLink]="['/']">
+        <i class="bi bi-house"></i>
+        <span>Trang chủ</span>
+      </li>
+
+      <li [routerLink]="['/dashboard/ebook']">
+        <i class="bi bi-box-seam"></i>
+        <span>Sản phẩm</span>
+      </li>
+
+      <li [routerLink]="['/dashboard/orderlist']">
+        <i class="bi bi-receipt"></i>
+        <span>Đơn hàng</span>
+      </li>
+
+      <li [routerLink]="['/dashboard/employees']">
+        <i class="bi bi-people"></i>
+        <span>Nhân viên</span>
+      </li>
+
+      <li [routerLink]="['/dashboard/customers']">
+        <i class="bi bi-person"></i>
+        <span>Khách hàng</span>
+      </li>
+
+      <hr>
+
+      <li>
+        <i class="bi bi-shield-lock"></i>
+        <span>Phân quyền</span>
+      </li>
+
+      <li>
+        <i class="bi bi-key"></i>
+        <span>Vai trò & quyền hạn</span>
+      </li>
+
+      <li>
+        <i class="bi bi-gear"></i>
+        <span>Cài đặt hệ thống</span>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h2>Bảng điều khiển</h2>
+
+      <div class="header-right">
+        <button class="icon-btn">
+          <i class="bi bi-bell"></i>
+        </button>
+
+        <div class="admin">
+          👋 admin
+        </div>
+
+        <button class="logout">
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="content">
+
+      <!-- STAT CARDS -->
+<div class="stats">
+  <div class="stat-card blue">
+    <p>Người dùng</p>
+    <h3>{{ totalUsers() }}</h3>
+  </div>
+
+  <div class="stat-card green">
+    <p>Doanh thu</p>
+    <h3>{{ totalRevenue() | number }} VNĐ</h3>
+  </div>
+
+  <div class="stat-card yellow">
+    <p>Đơn hàng</p>
+    <h3>{{ totalOrders() }}</h3>
+  </div>
+
+  <div class="stat-card red">
+    <p>Sắp hết hàng</p>
+    <h3>{{ lowStock() }} sản phẩm</h3>
+  </div>
+</div>
+
+
+      <!-- ROUTER -->
+      <router-outlet></router-outlet>
+
+    </section>
+  </main>
+</div>

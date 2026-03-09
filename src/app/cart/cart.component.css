@@ -1,0 +1,12 @@
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10px; */
+  width: 100px;
+}
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}

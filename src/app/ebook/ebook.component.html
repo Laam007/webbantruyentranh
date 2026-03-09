@@ -1,0 +1,215 @@
+<h2>{{ isEditMode() ? 'Chỉnh sửa sách' : 'Thêm sách mới' }}</h2>
+<div></div>
+
+<form (ngSubmit)="submitForm()" class="row g-3">
+  <div class="col-lg-3">
+    <div class="col-12">
+      <img
+        [src]="formEbook().image || '/image/danhmuc0.png'"
+        (click)="fileInput.click()"
+        class="img-thumbnail"
+        alt="Xem trước ảnh"
+        style="width: 100%; height: 300px; object-fit: contain; cursor: pointer"
+      />
+
+      <input
+        type="file"
+        #fileInput
+        (change)="onFileSelected($event)"
+        accept="image/*"
+        style="display: none"
+      />
+    </div>
+
+    <div class="col-12 mt-1">
+      <button
+        type="submit"
+        [ngClass]="isEditMode() ? 'btn btn-info btn-sm' : 'btn btn-primary btn-sm'"
+      >
+        {{ isEditMode() ? 'Cập nhật' : 'Thêm mới' }}
+      </button>
+
+      <button
+        *ngIf="isEditMode"
+        type="button"
+        (click)="resetForm()"
+        class="btn btn-secondary btn-sm"
+      >
+        Hủy
+      </button>
+    </div>
+  </div>
+
+  <div class="col-lg-9">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Tên sách</label>
+          <input
+            type="text"
+            [(ngModel)]="formEbook().title"
+            name="title"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label class="form-label">Thể loại</label>
+          <input
+            type="text"
+            [(ngModel)]="formEbook().category"
+            name="category"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="mb-3">
+          <label class="form-label">Tác giả</label>
+          <input
+            type="text"
+            [(ngModel)]="formEbook().author"
+            name="author"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <label class="form-label">Số trang</label>
+          <input
+            type="number"
+            [(ngModel)]="formEbook().pages"
+            name="pages"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <label class="form-label">Giá</label>
+          <input
+            type="number"
+            [(ngModel)]="formEbook().price"
+            name="price"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <label class="form-label">Giảm giá (%)</label>
+          <input
+            type="number"
+            [(ngModel)]="formEbook().discount"
+            name="discount"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <label class="form-label">Tồn kho</label>
+          <input
+            type="number"
+            [(ngModel)]="formEbook().stock"
+            name="stock"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <label class="form-label">Ngày phát hành</label>
+          <input
+            type="text"
+            [(ngModel)]="formEbook().publishDate"
+            name="publishDate"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="mb-3">
+          <label class="form-label">Người dịch</label>
+          <input
+            type="text"
+            [(ngModel)]="formEbook().translator"
+            name="translator"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="mb-3">
+          <label class="form-label">Mô tả</label>
+          <textarea
+            [(ngModel)]="formEbook().description"
+            rows="5"
+            name="description"
+            class="form-control"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<hr />
+
+<h3>Danh sách sách</h3>
+
+<div class="table-responsive-md">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tên sách</th>
+        <th>Tác giả</th>
+        <th>Thể loại</th>
+        <th>Giá</th>
+        <th>Giảm giá</th>
+        <th>Tồn kho</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (ebook of ebooks(); track $index) {
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ ebook.title }}</td>
+        <td>{{ ebook.author }}</td>
+        <td>{{ ebook.category }}</td>
+        <td>{{ ebook.price | currency : 'VND' }}</td>
+        <td>{{ ebook.discount }}</td>
+        <td>{{ ebook.stock }}</td>
+        <td class="d-flex">
+          <button
+            class="btn btn-warning btn-sm me-1"
+            (click)="editEbook(ebook)"
+          >
+            Sửa
+          </button>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteEbook(ebook.id)"
+          >
+            Xóa
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

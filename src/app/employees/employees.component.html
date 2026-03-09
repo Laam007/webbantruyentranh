@@ -1,0 +1,237 @@
+<div class="mx-auto">
+  <h2 class="font-bold mb-4">Quản lý nhân viên</h2>
+
+  <!-- *ngIf="authService.hasPermission('create')" -->
+  @if (authService.hasPermission('create')) {
+    <button
+      (click)="handleAdd()"
+      [disabled]="editingId() !== null || newUser() !== null"
+      class="btn btn-primary btn-sm text-white rounded-md mb-2"
+    >
+      Thêm mới
+    </button>
+  }
+
+  <div class="table-responsive-md">
+    <table class="table table-striped table-hover table-bordered align-middle">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border p-2">ID</th>
+          <th class="border p-2">Hình ảnh</th>
+          <th class="border p-2">Tên đăng nhập</th>
+          <th class="border p-2">Họ và tên</th>
+          <th class="border p-2">Email</th>
+          <th class="border p-2">Số điện thoại</th>
+          <th class="border p-2">Địa chỉ</th>
+          <th class="border p-2" style="width: 150px">Thao tác</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @if (newUser()) {
+        <tr class="border">
+          <td class="border p-2">{{ newUser()?.id }}</td>
+
+          <td class="border p-2">
+            <input
+              type="file"
+              accept="image/*"
+              #fileInput
+              (change)="handleImageChange($event, newEmployee()?.id, true)"
+              [id]="'file-input-' + newEmployee()?.id"
+              class="form-control"
+              style="display: none"
+            />
+            <img
+              [src]="newEmployee()?.image"
+              alt="Xem trước"
+              width="40"
+              style="cursor: pointer"
+              (click)="fileInput.click()"
+            />
+          </td>
+
+          <td class="border p-2">
+            <input
+              type="text"
+              name="username"
+              [(ngModel)]="newUser()!.username"
+              class="form-control"
+            />
+          </td>
+
+          <td class="border p-2">
+            <input
+              type="text"
+              name="fullname"
+              [(ngModel)]="newEmployee()!.fullname"
+              class="form-control"
+            />
+          </td>
+
+          <td class="border p-2">
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="newEmployee()!.email"
+              class="form-control"
+            />
+          </td>
+
+          <td class="border p-2">
+            <input
+              type="text"
+              name="phone"
+              [(ngModel)]="newEmployee()!.phone"
+              class="form-control"
+            />
+          </td>
+
+          <td class="border p-2">
+            <input
+              type="text"
+              name="address"
+              [(ngModel)]="newEmployee()!.address"
+              class="form-control"
+            />
+          </td>
+
+          <td class="border p-2">
+            <button (click)="handleSave()" class="btn btn-sm btn-info px-1 py-1">
+              Lưu
+            </button>
+            <button (click)="handleCancel()" class="btn btn-sm btn-secondary px-1 py-1">
+              Hủy
+            </button>
+          </td>
+        </tr>
+        }
+
+        @for (user of users(); track $index) {
+        <tr class="border">
+          <td class="border p-2">{{ user.id }}</td>
+
+          <td class="border p-2">
+            @if (editingId() === user.id) {
+              <input
+                type="file"
+                accept="image/*"
+                #fileInput
+                (change)="handleImageChange($event, user.id)"
+                [id]="'file-input-' + user.id"
+                style="display: none"
+              />
+              <img
+                [src]="getEmployee(user.id)?.image || '/image/avatar.jpg'"
+                alt="Ảnh đại diện"
+                width="40"
+                (click)="fileInput.click()"
+                style="cursor: pointer"
+              />
+            } @else {
+              <img
+                [src]="getEmployee(user.id!)?.image || '/image/avatar.jpg'"
+                alt="Ảnh đại diện"
+                width="40"
+              />
+            }
+          </td>
+
+          <td class="border p-2">
+            @if (editingId() === user.id) {
+              <input
+                type="text"
+                name="username"
+                [(ngModel)]="user.username"
+                class="form-control"
+              />
+            } @else {
+              {{ user.username }}
+            }
+          </td>
+
+          <td class="border p-2">
+            @if (editingId() === user.id) {
+              <input
+                type="text"
+                name="fullname"
+                class="form-control"
+                [(ngModel)]="getEmployee(user.id)!.fullname"
+              />
+            } @else {
+              {{ getEmployee(user.id!)?.fullname }}
+            }
+          </td>
+
+          <td class="border p-2">
+            @if (editingId() === user.id) {
+              <input
+                type="text"
+                name="email"
+                class="form-control"
+                [(ngModel)]="getEmployee(user.id)!.email"
+              />
+            } @else {
+              {{ getEmployee(user.id!)?.email }}
+            }
+          </td>
+
+          <td class="border p-2">
+            @if (editingId() === user.id) {
+              <input
+                type="text"
+                name="phone"
+                class="form-control"
+                [(ngModel)]="getEmployee(user.id)!.phone"
+              />
+            } @else {
+              {{ getEmployee(user.id!)?.phone }}
+            }
+          </td>
+
+          <td class="border p-2">
+            @if (editingId() === user.id) {
+              <input
+                type="text"
+                name="address"
+                class="form-control"
+                [(ngModel)]="getEmployee(user.id)!.address"
+              />
+            } @else {
+              {{ getEmployee(user.id!)?.address }}
+            }
+          </td>
+
+          <td class="border p-2">
+            @if (editingId() === user.id) {
+              <button (click)="handleSave()" class="btn btn-sm btn-info px-1 py-1">
+                Lưu
+              </button>
+              <button (click)="handleCancel()" class="btn btn-sm btn-secondary px-1 py-1">
+                Hủy
+              </button>
+            } @else {
+              <button
+                (click)="handleEdit(user.id!)"
+                [disabled]="newUser() !== null"
+                class="btn btn-warning btn-sm px-1 py-1"
+              >
+                Sửa
+              </button>
+
+              <!-- *ngIf="authService.hasPermission('delete')" -->
+              <button
+                (click)="handleDelete(user.id!)"
+                [disabled]="newUser() !== null"
+                class="btn btn-danger btn-sm px-1 py-1"
+              >
+                Xóa
+              </button>
+            }
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

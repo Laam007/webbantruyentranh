@@ -1,0 +1,129 @@
+<div class="container-fluid py-5">
+  <div class="container py-2">
+    <h1 class="mb-2">Chi tiết thanh toán</h1>
+    <form [formGroup]="formData" (ngSubmit)="handleSubmit()">
+      <div class="row g-5">
+        <div class="col-md-12 col-lg-6 col-xl-4">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+              <div class="form-item w-100">
+                <label class="form-label my-3"> Họ và Tên<sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" formControlName="fullname" />
+                <div class="text-danger mt-1"
+                  *ngIf="formData.get('fullname')?.touched && formData.get('fullname')?.invalid">
+                  Họ và tên không được để trống.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <div class="form-item w-100">
+                <label class="form-label my-3"> Điện thoại<sup class="text-danger">*</sup> </label>
+                <input type="text" class="form-control" formControlName="phone" required />
+                <div class="text-danger mt-1" *ngIf="formData.get('phone')?.touched && formData.get('phone')?.invalid">
+                  Số điện thoại không được để trống.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <label class="form-label my-3"> Email<sup class="text-danger">*</sup> </label>
+            <input type="email" class="form-control" formControlName="email" />
+            <div class="text-danger mt-1"
+              *ngIf="formData.get('email')?.touched && formData.get('email')?.errors as errors">
+              <span *ngIf="errors['required']">Email không được để trống.</span>
+              <span *ngIf="errors['email']">Email không hợp lệ.</span>
+            </div>
+          </div>
+          <div class="form-item">
+            <label class="form-label my-3"> Địa chỉ <sup class="text-danger">*</sup> </label>
+            <input type="text" class="form-control" formControlName="address" />
+            <div class="text-danger mt-1" *ngIf="formData.get('address')?.touched && formData.get('address')?.invalid">
+              Địa chỉ không được để trống.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6 col-xl-8">
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Sản phẩm</th>
+                  <th scope="col">Tên sản phẩm</th>
+                  <th scope="col">Giá</th>
+                  <th scope="col">Số lượng</th>
+                  <th scope="col">Tổng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of userCarts()">
+                  <td scope="row">
+                    <div class="d-flex align-items-center">
+                      <img [src]="item.image" class="img-fluid rounded-circle cart-img"
+                        style="width: 50px; height: 50px" alt="" />
+                    </div>
+                  </td>
+                  <td>{{ item.title }}</td>
+                  <td>{{ item.price.toLocaleString() + '&nbsp;đ' }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>{{ (item.price * item.quantity).toLocaleString() + '&nbsp;đ' }}</td>
+                </tr>
+
+                <tr>
+                  <th scope="row" colspan="3"></th>
+                  <td>
+                    <p class="mb-0 text-dark py-2">Subtotal</p>
+                  </td>
+                  <td>
+                    <div class="py-2 border-bottom border-top">
+                      <p class="mb-0 text-dark">{{ subtotal().toLocaleString() + '&nbsp;đ' }}</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="py-2">
+                    <p class="mb-0 text-dark py-4">Shipping</p>
+                  </td>
+                  <td colspan="3" class="py-2">
+                    <div class="form-check text-start">
+                      <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-1"
+                        name="Shipping-1" />
+                      <label class="form-check-label" for="Shipping-1"> Free Shipping </label>
+                    </div>
+                    <div class="form-check text-start">
+                      <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-2"
+                        name="Shipping-1" />
+                      <label class="form-check-label" for="Shipping-2"> Flat rate: $15.00 </label>
+                    </div>
+                    <div class="form-check text-start">
+                      <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-3"
+                        name="Shipping-1" />
+                      <label class="form-check-label" for="Shipping-3"> Local Pickup: $8.00 </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="py-2" colspan="3">
+                    <p class="mb-0 text-dark text-uppercase py-3">TOTAL</p>
+                  </td>
+                  <td class="py-2">
+                    <div class="py-2 border-bottom border-top">
+                      <p class="mb-0 text-dark">{{ subtotal().toLocaleString() + '&nbsp;đ' }}</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row g-4 text-center align-items-center justify-content-center pt-1">
+            <button type="submit" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">
+              Thanh toán
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

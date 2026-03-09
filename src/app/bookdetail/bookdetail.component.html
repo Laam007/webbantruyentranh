@@ -1,0 +1,162 @@
+<div class="container-fluid py-5 mt-5">
+  <div class="container py-5">
+    <div class="row g-4 mb-5">
+      <div class="col-lg-8 col-xl-9">
+        <div class="row g-4">
+          <!-- ẢNH SÁCH -->
+          <div class="col-lg-6">
+            <div class="border rounded">
+              <a href="#">
+                <img
+                  [src]="bookDetail()?.image"
+                  class="img-fluid rounded"
+                  alt="{{ bookDetail()?.title }}"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- THÔNG TIN SÁCH -->
+          <div class="col-lg-6">
+            <h5 class="fw-bold mb-3">{{ bookDetail()?.title }}</h5>
+            <p class="mb-2">
+              <b>Thể loại:</b> {{ bookDetail()?.category }}
+            </p>
+            <p class="mb-2">
+              <b>Tác giả:</b> {{ bookDetail()?.author }}
+            </p>
+            <p class="mb-2">
+              <b>Dịch giả:</b> {{ bookDetail()?.translator }}
+            </p>
+            <p class="mb-2">
+              <b>Số trang:</b> {{ bookDetail()?.pages }}
+            </p>
+            <p class="mb-3">
+              <b>Năm xuất bản:</b> {{ bookDetail()?.publishDate }}
+            </p>
+
+            <!-- GIÁ -->
+            <h5 class="fw-bold price mb-1">
+              {{
+                discountPrice(bookDetail()?.price || 0, bookDetail()?.discount || 0)
+                  .toLocaleString()
+              }}
+              đ
+              <span class="discount-badge">-{{ bookDetail()?.discount }}%</span>
+            </h5>
+            <div class="old-price">
+              {{ (bookDetail()?.price || 0).toLocaleString() }} đ
+            </div>
+
+            <!-- ĐÁNH GIÁ -->
+            <div class="d-flex mb-4">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star text-secondary"></i>
+              <i class="bi bi-star text-secondary"></i>
+            </div>
+
+            <!-- MÔ TẢ -->
+            <p style="text-align: justify;">
+              {{ bookDetail()?.description }}
+            </p>
+
+            <!-- SỐ LƯỢNG -->
+            <div class="input-group quantity mb-3">
+              <div class="input-group-btn">
+                <button
+                  class="btn btn-sm btn-minus rounded-circle bg-warning border"
+                  (click)="decreaseQuantity()"
+                >
+                  <i class="bi bi-dash"></i>
+                </button>
+              </div>
+              <input
+                type="text"
+                [value]="quantity()"
+                class="form-control form-control-sm text-center border-0"
+                readonly
+              />
+              <div class="input-group-btn">
+                <button
+                  class="btn btn-sm btn-plus rounded-circle bg-warning border"
+                  (click)="increaseQuantity()"
+                >
+                  <i class="bi bi-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            NÚT THÊM GIỎ
+            <button
+              class="btn btn-primary border border-secondary rounded-pill px-4 py-2"
+              (click)="addToCart()"
+            >
+              <i class="bi bi-bag me-2"></i> Thêm vào giỏ hàng
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DANH MỤC BÊN PHẢI -->
+      <div class="col-lg-4 col-xl-3">
+        <div class="row g-4 book">
+          <div class="col-lg-12">
+            <div class="input-group w-100 mx-auto d-flex mb-4">
+              <input
+                type="search"
+                class="form-control p-3"
+                placeholder="Tìm kiếm..."
+                aria-describedby="search-icon-1"
+              />
+              <span id="search-icon-1" class="input-group-text p-3">
+                <i class="fa fa-search"></i>
+              </span>
+            </div>
+
+            <div class="mb-4">
+              <h4>Danh mục</h4>
+              <ul class="list-unstyled book-categorie">
+                <li>
+                  <div class="d-flex justify-content-between book-name">
+                    <a href="#"><i class="fa fa-book me-2"></i>Doraemon</a>
+                    <span>(3)</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="d-flex justify-content-between book-name">
+                    <a href="#"><i class="fa fa-book me-2"></i>Naruto</a>
+                    <span>(5)</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="d-flex justify-content-between book-name">
+                    <a href="#"><i class="fa fa-book me-2"></i>Onepiece</a>
+                    <span>(2)</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="d-flex justify-content-between book-name">
+                    <a href="#"><i class="fa fa-book me-2"></i>Dragon Ball</a>
+                    <span>(8)</span>
+                  </div>
+                </li>
+                <!-- <li>
+                  <div class="d-flex justify-content-between book-name">
+                    <a href="#"><i class="fa fa-book me-2"></i>Giáo trình</a>
+                    <span>(5)</span>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <h4 class="mb-4"></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

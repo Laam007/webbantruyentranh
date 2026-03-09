@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(90deg, #ff4b2b, #ff416c); padding: 10px 0;">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center fw-bold text-white ms-3" href="#">
+      <img src="/image/logosw.jpg" alt="Logo" height="50"
+           class="me-2 rounded-pill border border-2 border-white shadow-sm">
+      <span style="font-size: 1.4rem">
+        Manga<span style="color: #ffe600;">Store</span>
+      </span>
+    </a>
+
+    <!-- Toggle button cho mobile -->
+    <button class="navbar-toggler border-0 me-3" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarColor"
+            aria-controls="navbarColor" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarColor">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">Trang chủ</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">Thể loại</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">Mới phát hành</a></li>
+        <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">Liên hệ</a></li>
+      </ul>
+
+      <!-- Form tìm kiếm -->
+      <form class="d-flex align-items-center bg-white rounded-pill px-2 py-1 mx-lg-3"
+            (ngSubmit)="onSearch()">
+        <input class="form-control border-0" type="text" placeholder="Tìm truyện..."
+               [(ngModel)]="searching" name="search"
+               style="box-shadow: none; outline: none; width: 220px;">
+        <button class="btn text-dark fw-bold rounded-pill px-3" type="submit" style="background-color: #ffe600;">
+          Tìm
+        </button>
+      </form>
+
+      <!-- User + Giỏ hàng -->
+      <ul class="navbar-nav align-items-center me-3">
+        <!-- Nếu chưa đăng nhập -->
+        <ng-container *ngIf="!authService.user()">
+          <li class="nav-item"><a class="nav-link text-white fw-semibold px-2" [routerLink]="['/signup']">Đăng ký</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-semibold px-2" [routerLink]="['/signin']">Đăng nhập</a></li>
+        </ng-container>
+
+        <!-- Nếu đã đăng nhập -->
+        <ng-container *ngIf="authService.user()">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" id="dropdownUser"
+               data-bs-toggle="dropdown">
+              👋 {{ authService.user()?.username }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <a class="dropdown-item" [routerLink]="['/dashboard']">Trang cá nhân</a>
+              <a class="dropdown-item" href="#" (click)="onLogout()">Đăng xuất</a>
+            </div>
+          </li>
+        </ng-container>
+
+        <!-- Nút Thông báo đơn hàng mới -->
+        <li class="nav-item ms-3">
+          <button class="btn btn-outline-success position-relative"
+                  [disabled]="!authService.user()"
+                  (click)="updateIsNew()">
+            Thông báo
+            <span *ngIf="orderNewCount() > 0"
+                  class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+              {{ orderNewCount() }}
+            </span>
+          </button>
+        </li>
+
+        <!-- Giỏ hàng -->
+        <li class="nav-item position-relative ms-3">
+          <a class="nav-link text-white fs-5" href="/cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
+                  style="font-size: 0.7rem;">
+              {{ totalItems() }}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

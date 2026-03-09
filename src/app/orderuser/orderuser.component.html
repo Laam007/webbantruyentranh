@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <h2 class="mb-2">Đơn hàng của bạn</h2>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Tên khách hàng</th>
+        <th>Sản phẩm</th>
+        <th>Tổng tiền</th>
+        <th>Trạng thái</th>
+        <th>Địa chỉ</th>
+        <th>Ngày mua</th>
+        <th>Tác vụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders()">
+        <td>{{ order.id }}</td>
+        <td>{{ getUserInfo(order.userId)?.fullname || 'Khách hàng' }}</td>
+        <td>
+          <ul class="list-unstyled">
+            <li *ngFor="let item of order.items">
+  {{ productNames[item.productId] || 'Đang tải...' }}
+  - Số lượng: {{ item.quantity }}
+  - Giá: {{ item.price | number }} đ
+</li>
+          </ul>
+        </td>
+        <td>{{ order.total | number }} đ</td>
+        <td>{{ order.status }}</td>
+        <td>
+          <ng-container *ngIf="getUserInfo(order.userId) as user">
+            <div><strong>Email:</strong> {{ user.email }}</div>
+            <div><strong>Địa chỉ:</strong> {{ user.address }}</div>
+            <div><strong>Điện thoại:</strong> {{ user.phone }}</div>
+          </ng-container>
+        </td>
+        <td>{{ order.createdAt | date:'dd/MM/yyyy' }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="updateStatus(order.id, 'Hủy đơn hàng')">
+            🗑️
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

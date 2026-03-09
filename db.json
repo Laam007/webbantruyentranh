@@ -1,0 +1,578 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Doraemon Truyện Dài - Tập 13: Nobita Và Mê Cung Thiếc",
+      "image": "/image/ebooknew1.png",
+      "category": "Doraemon",
+      "author": "Fujiko F. Fujio",
+      "description": "Nobita và các bạn tình cờ khám phá ra một thế giới bằng thiếc, nơi các robot sinh sống. Khi ranh giới giữa người và máy bị xóa nhòa, nhóm bạn phải cùng Doraemon vượt qua mê cung khổng lồ để giải cứu thế giới robot khỏi sự diệt vong.",
+      "pages": 236,
+      "price": 60000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2023",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "2",
+      "title": "Doraemon Truyện Dài - Tập 3: Nobita Thám Hiểm Vùng Đất Mới",
+      "image": "/image/ebooknew2.webp",
+      "category": "Doraemon",
+      "author": "Fujiko F. Fujio",
+      "description": "Một ngày nọ, Nobita và các bạn quyết định đến vùng đất hoang sơ chưa ai biết đến. Cuộc phiêu lưu đầy thử thách mở ra với những sinh vật lạ, hiểm nguy rình rập và một nền văn minh bí ẩn đang chờ được khám phá.",
+      "pages": 417,
+      "price": 92000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2023",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "3",
+      "title": "Doraemon Truyện Dài - Tập 10: Nobita Và Hành Tinh Muông Thú",
+      "image": "/image/ebooknew4.webp",
+      "category": "Doraemon",
+      "author": "Fujiko F. Fujio",
+      "description": "Khi Doraemon và Nobita lạc đến hành tinh nơi động vật có thể nói chuyện và sinh hoạt như con người, nhóm bạn phải giúp những sinh vật đáng yêu này chống lại thế lực tàn ác đang âm mưu xâm chiếm hành tinh của họ.",
+      "pages": 583,
+      "price": 134000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2023",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "4",
+      "title": "Doraemon Truyện Dài - Tập 15: Đấng Toàn Năng Nobita",
+      "image": "/image/ebooknew3.webp",
+      "category": "Doraemon",
+      "author": "Fujiko F. Fujio",
+      "description": "Nobita vô tình tìm thấy một hòn đá có sức mạnh thần thánh và trở thành 'đấng toàn năng' trong thế giới tưởng tượng của mình. Nhưng khi sức mạnh vượt ngoài tầm kiểm soát, Doraemon và các bạn phải giúp Nobita nhận ra giá trị thật của tình bạn và lòng nhân ái.",
+      "pages": 334,
+      "price": 64000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d4",
+      "title": "Naruto Tập 46: Naruto Trở Về!! (Tái Bản)",
+      "image": "/image/ebooknew5.png",
+      "category": "Naruto",
+      "author": "Masashi Kishimoto",
+      "description": "Sau hai năm rèn luyện gian khổ cùng Jiraiya, Naruto trở về Làng Lá mạnh mẽ hơn bao giờ hết. Nhưng niềm vui đoàn tụ nhanh chóng bị thay thế bởi nguy cơ mới: tổ chức Akatsuki bắt đầu hành động, đe dọa sinh mạng của các Jinchūriki!",
+      "pages": 204,
+      "price": 41000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d5",
+      "title": "Naruto Tập 29: Kakashi Vs. Itachi!!",
+      "image": "/image/ebooknew6.png",
+      "category": "Naruto",
+      "author": "Masashi Kishimoto",
+      "description": "Sasuke quyết tâm mạnh lên để đối đầu với anh trai Itachi. Trong khi đó, nhóm Naruto tiếp tục thực hiện nhiệm vụ nguy hiểm chạm trán với Akatsuki – nơi Kakashi phải đối đầu trực tiếp với Itachi trong một trận chiến nghẹt thở giữa ảo thuật và ý chí.",
+      "pages": 347,
+      "price": 51000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d6",
+      "title": "Naruto Tập 38: Thành Quả Luyện Tập…!! (Tái Bản 2022)",
+      "image": "/image/ebooknew7.png",
+      "category": "Naruto",
+      "author": "Masashi Kishimoto",
+      "description": "Naruto đã đạt được sức mạnh mới nhờ vào quá trình luyện tập khắc nghiệt cùng Jiraiya. Khi đối đầu với kẻ thù nguy hiểm của Akatsuki, cậu phải chứng minh rằng những nỗ lực ấy không vô ích — và sức mạnh thật sự đến từ lòng tin vào đồng đội.",
+      "pages": 177,
+      "price": 63000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d7",
+      "title": "Naruto Tập 37: Trận Đấu Của Shikamaru!! (Tái Bản 2022)",
+      "image": "/image/ebooknew8.png",
+      "category": "Naruto",
+      "author": "Masashi Kishimoto",
+      "description": "Shikamaru bước vào cuộc chiến sinh tử để trả thù cho thầy Asuma. Với trí tuệ chiến thuật sắc bén và lòng trung thành sâu sắc, cậu chứng minh rằng không chỉ sức mạnh mà cả trí tuệ và lòng dũng cảm cũng có thể thay đổi cục diện trận đấu.",
+      "pages": 255,
+      "price": 38000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d8",
+      "title": "Hồ Sơ One Piece - Red Grand Characters (Tái Bản 2022)",
+      "image": "/image/ebooknew9.png",
+      "category": "Onepiece",
+      "author": "Eiichiro Oda",
+      "description": "Cuốn hồ sơ tổng hợp thông tin chi tiết về các nhân vật trong thế giới One Piece — từ băng Mũ Rơm đến Hải Quân và các Thất Vũ Hải. Sách bao gồm hình minh họa, dữ liệu, và bình luận của tác giả Eiichiro Oda, giúp người hâm mộ hiểu sâu hơn về vũ trụ hải tặc đầy màu sắc này.",
+      "pages": 357,
+      "price": 52000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d9",
+      "title": "Tiểu Thuyết One Piece - HEROINES [Tặng Kèm Obi + Set Postcard]",
+      "image": "/image/ebooknew10.png",
+      "category": "Onepiece",
+      "author": "Eiichiro Oda",
+      "description": "Tác phẩm tiểu thuyết tập trung vào các nữ nhân vật trong One Piece như Nami, Robin, Vivi, Perona và Hancock. Mỗi câu chuyện hé lộ thêm góc nhìn mới mẻ, cảm xúc và sức mạnh nội tâm của những người phụ nữ mạnh mẽ trong thế giới hải tặc.",
+      "pages": 389,
+      "price": 56000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d10",
+      "title": "Anime Comics: One Piece Stampede",
+      "image": "/image/ebooknew11.png",
+      "category": "Onepiece",
+      "author": "Eiichiro Oda",
+      "description": "Dựa trên bộ phim điện ảnh ăn khách 'One Piece: Stampede', cuốn Anime Comics tái hiện toàn bộ câu chuyện qua tranh màu sống động. Luffy và đồng đội tham gia lễ hội hải tặc lớn nhất thế giới — nơi các thế lực mạnh mẽ nhất cùng săn tìm kho báu của Roger!",
+      "pages": 506,
+      "price": 74000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d11",
+      "title": "Hồ Sơ One Piece - Green Secret Pieces (Tái Bản 2022)",
+      "image": "/image/ebooknew12.png",
+      "category": "Onepiece",
+      "author": "Eiichiro Oda",
+      "description": "Tập sách tổng hợp những bí mật, ghi chú, bản vẽ phác thảo và thông tin hậu trường do chính tác giả Eiichiro Oda biên soạn. 'Green Secret Pieces' là cuốn cẩm nang quý giá dành cho fan, hé lộ những chi tiết chưa từng được tiết lộ về thế giới One Piece.",
+      "pages": 210,
+      "price": 28000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d12",
+      "title": "Combo Dragon Ball Super",
+      "image": "/image/ebooknew13.png",
+      "category": "Dragon Ball",
+      "author": "Akira Toriyama",
+      "description": "Bộ combo đặc biệt gồm nhiều tập Dragon Ball Super, kể lại hành trình mới của Goku, Vegeta và các chiến binh Z sau khi tiêu diệt Majin Buu. Câu chuyện mở ra kỷ nguyên mới với những vị thần sức mạnh, đa vũ trụ và những trận chiến vượt ngoài trí tưởng tượng.",
+      "pages": 300,
+      "price": 100000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Không có"
+    },
+    {
+      "id": "67d13",
+      "title": "Dragon Ball Super Tập 5: Tạm Biệt Nhé Trunks Lớn!",
+      "image": "/image/ebooknew14.png",
+      "category": "Dragon Ball",
+      "author": "Akira Toriyama",
+      "description": "Trunks tương lai cùng Goku và Vegeta đối đầu với ác thần Zamasu – kẻ mang lòng căm thù loài người. Sau trận chiến khốc liệt, Trunks buộc phải đưa ra quyết định đầy xúc động để bảo vệ thế giới của mình, khép lại một chương bi tráng trong Dragon Ball Super.",
+      "pages": 86,
+      "price": 20000,
+      "discount": 0,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d14",
+      "title": "Dragon Ball Z Anime Comics: Cuộc Chiến Giữa Các Vị Thần",
+      "image": "/image/ebooknew15.png",
+      "category": "Dragon Ball",
+      "author": "Akira Toriyama",
+      "description": "Phiên bản truyện tranh chuyển thể từ bộ phim điện ảnh 'Battle of Gods' – nơi Goku lần đầu gặp Thần Hủy Diệt Beerus. Cuộc chiến nảy lửa mở ra sức mạnh mới – Super Saiyan God – và khởi đầu cho kỷ nguyên Dragon Ball Super.",
+      "pages": 346,
+      "price": 63000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Chưa xác định"
+    },
+    {
+      "id": "67d15",
+      "title": "Dragon Ball Z Bảy Viên Ngọc Rồng Anime Comics: Hồi Sinh",
+      "image": "/image/ebooknew16.png",
+      "category": "Dragon Ball",
+      "author": "Akira Toriyama",
+      "description": "Câu chuyện được chuyển thể từ bộ phim 'Resurrection F' – Frieza trở lại sau cái chết, mang theo mối thù sâu sắc với Goku và những người Saiyan. Lần này, Goku và Vegeta phải hợp lực để đối đầu với kẻ địch mạnh mẽ nhất mà họ từng gặp.",
+      "pages": 300,
+      "price": 79000,
+      "discount": 15,
+      "stock": 50,
+      "publishDate": "2024",
+      "translator": "Không có"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin",
+      "role": "admin",
+      "islocked": false,
+      "permissions": [
+        "read",
+        "view",
+        "create",
+        "update",
+        "delete"
+      ]
+    },
+    {
+      "id": "2",
+      "username": "hoangyen",
+      "password": "123456",
+      "role": "user",
+      "islocked": false,
+      "permissions": [
+        "create",
+        "update"
+      ]
+    },
+    {
+      "id": "3",
+      "username": "bichthao",
+      "password": "",
+      "role": "",
+      "islocked": false,
+      "permissions": []
+    },
+    {
+      "id": "4",
+      "username": "user",
+      "password": "123456",
+      "role": "user",
+      "islocked": false,
+      "permissions": []
+    }
+  ],
+  "employees": [
+    {
+      "id": "1",
+      "image": "/image/avatar.jpg",
+      "fullname": "Nguyễn Thành Tài",
+      "phone": "0909000888",
+      "email": "thanhtai@gmail.com",
+      "address": "12 ABC Q1 Tp.HCM"
+    },
+    {
+      "id": "2",
+      "image": "/image/avatar.jpg",
+      "fullname": "Nguyễn Hoàng Yến",
+      "email": "hoangyen@gmail.com",
+      "phone": "0909000888",
+      "address": "112 DCS Q1 Tp.HCM"
+    },
+    {
+      "id": "3",
+      "image": "/image/commentor-item3.jpg",
+      "fullname": "Lê Thị Bích Thảo",
+      "email": "annalethao@gmail.com",
+      "phone": "0909090909",
+      "address": "112 ACB Q1 Tp.HCM"
+    },
+    {
+      "id": "4",
+      "image": "/image/commentor-item1.jpg",
+      "fullname": "Lê Minh Thuộc",
+      "email": "minhthuoc@gmail.com",
+      "phone": "0908688688",
+      "address": "12 Kênh Tân Hóa Q11"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "islocked": false,
+      "permissions": [
+        "read",
+        "view",
+        "create",
+        "update",
+        "delete"
+      ]
+    },
+    {
+      "id": "2",
+      "username": "hoangyen",
+      "password": "123456",
+      "role": "user",
+      "islocked": false,
+      "permissions": [
+        "create",
+        "update"
+      ]
+    },
+    {
+      "id": "3",
+      "username": "bichthao",
+      "password": "",
+      "role": "",
+      "islocked": true,
+      "permissions": []
+    }
+  ],
+  "Employees": [
+    {
+      "id": "1",
+      "image": "/image/commentor-item1.jpg",
+      "fullname": "Nguyễn Thành Tài",
+      "phone": "0909000888",
+      "email": "thanhtai@gmail.com",
+      "address": "12 ABC Q1 Tp.HCM"
+    },
+    {
+      "id": "2",
+      "image": "/image/commentor-item3.jpg",
+      "fullname": "Nguyễn Hoàng Yến",
+      "email": "hoangyen@gmail.com",
+      "phone": "0909000888",
+      "address": "112 DCS Q1 Tp.HCM"
+    },
+    {
+      "id": "3",
+      "image": "/image/commentor-item2.jpg",
+      "fullname": "Lê Thị Bích Thảo",
+      "email": "annalethao@gmail.com",
+      "phone": "0909090909",
+      "address": "12 Kênh Tân Hóa Q11"
+    }
+  ],
+  "customers": [
+    {
+      "id": "9852",
+      "username": "acb",
+      "password": "123456789",
+      "fullname": "acb",
+      "phone": "0909000888",
+      "email": "acb@gmail.com",
+      "address": "12 ABC Q1 Tp.HCM",
+      "role": "customer",
+      "islocked": false
+    },
+    {
+      "id": "e721",
+      "username": "ocb",
+      "password": "123456",
+      "fullname": "ocb",
+      "phone": "0908688688",
+      "email": "ocb@gmail.com",
+      "address": "12 ABC Tp.Thủ Đức",
+      "role": "customer",
+      "islocked": false
+    },
+    {
+      "id": "87cb",
+      "username": "hsb",
+      "password": "123456",
+      "fullname": "hsb",
+      "phone": "0123456789",
+      "email": "hsb@gmail.com",
+      "address": "12 hsb Tp.Thủ Đức",
+      "role": "customer",
+      "islocked": true
+    },
+    {
+      "id": "cmbn5vwh",
+      "username": "tpb",
+      "password": "123456",
+      "fullname": "tpb",
+      "phone": "0909090909",
+      "email": "tpb@gmail.com",
+      "address": "12 Kênh Tân Hóa",
+      "role": "customer",
+      "islocked": false
+    },
+    {
+      "id": "cmbn5xoy",
+      "username": "tvb@gmail.com",
+      "password": "123456",
+      "fullname": "tvb",
+      "phone": "0908384505",
+      "email": "tvb@gmail.com",
+      "address": "12 tvb Q1",
+      "role": "customer",
+      "islocked": false
+    },
+    {
+      "id": "cus6",
+      "username": "789",
+      "password": "789",
+      "fullname": "1",
+      "phone": "q",
+      "email": "1@1",
+      "address": "1",
+      "role": "customer",
+      "islocked": false
+    },
+    {
+      "id": "cus7",
+      "username": "Laam",
+      "password": "Laam",
+      "fullname": "PTL",
+      "phone": "0935045603",
+      "email": "lamtungpham007@gmail.com",
+      "address": "12 trịnh đình thảo ",
+      "role": "customer",
+      "islocked": false
+    }
+  ],
+  "carts": [
+    {
+      "id": "8944",
+      "userId": "cmbn5vwh",
+      "productId": "67d6",
+      "title": "Naruto Tập 38: Thành Quả Luyện Tập…!! (Tái Bản 2022)",
+      "price": 63000,
+      "quantity": 1,
+      "image": "/image/ebooknew7.png",
+      "discount": 15,
+      "active": false
+    },
+    {
+      "id": "ae7b",
+      "userId": "cus7",
+      "productId": "1",
+      "title": "Doraemon Truyện Dài - Tập 13: Nobita Và Mê Cung Thiếc",
+      "price": 60000,
+      "quantity": 1,
+      "image": "/image/ebooknew1.png",
+      "discount": 15,
+      "active": true
+    },
+    {
+      "id": "9a4e",
+      "userId": "cus7",
+      "productId": "67d4",
+      "title": "Naruto Tập 46: Naruto Trở Về!! (Tái Bản)",
+      "price": 41000,
+      "quantity": 1,
+      "image": "/image/ebooknew5.png",
+      "discount": 15,
+      "active": true
+    },
+    {
+      "id": "2e74",
+      "userId": "cus7",
+      "productId": "67d8",
+      "title": "Hồ Sơ One Piece - Red Grand Characters (Tái Bản 2022)",
+      "price": 52000,
+      "quantity": 1,
+      "image": "/image/ebooknew9.png",
+      "discount": 15,
+      "active": true
+    },
+    {
+      "id": "c273",
+      "userId": "cus7",
+      "productId": "67d15",
+      "title": "Dragon Ball Z Bảy Viên Ngọc Rồng Anime Comics: Hồi Sinh",
+      "price": 79000,
+      "quantity": 1,
+      "image": "/image/ebooknew16.png",
+      "discount": 15,
+      "active": true
+    }
+  ],
+  "orders": [
+    {
+      "id": "0474",
+      "userId": "cus8",
+      "items": [
+        {
+          "id": "be71",
+          "userId": "cus8",
+          "productId": "4",
+          "title": "Doraemon Truyện Dài - Tập 15: Đấng Toàn Năng Nobita",
+          "price": 64000,
+          "quantity": 1,
+          "image": "/image/ebooknew3.webp",
+          "discount": 15,
+          "active": true
+        }
+      ],
+      "total": 64000,
+      "status": "Đã giao hàng",
+      "isNew": false,
+      "createdAt": "2026-01-30T07:21:49.148Z"
+    },
+    {
+      "id": "057f",
+      "userId": "1",
+      "items": [
+        {
+          "id": "e0bd",
+          "userId": "1",
+          "productId": "2",
+          "title": "Doraemon Truyện Dài - Tập 3: Nobita Thám Hiểm Vùng Đất Mới",
+          "price": 92000,
+          "quantity": 1,
+          "image": "/image/ebooknew2.webp",
+          "discount": 15,
+          "active": true
+        }
+      ],
+      "total": 92000,
+      "status": "Đã giao hàng",
+      "isNew": false,
+      "createdAt": "2026-01-30T08:29:50.290Z"
+    },
+    {
+      "id": "d77e",
+      "userId": "cus6",
+      "items": [
+        {
+          "id": "37a4",
+          "userId": "cus6",
+          "productId": "67d15",
+          "title": "Dragon Ball Z Bảy Viên Ngọc Rồng Anime Comics: Hồi Sinh",
+          "price": 79000,
+          "quantity": 1,
+          "image": "/image/ebooknew16.png",
+          "discount": 15,
+          "active": true
+        },
+        {
+          "id": "6057",
+          "userId": "cus6",
+          "productId": "3",
+          "title": "Doraemon Truyện Dài - Tập 10: Nobita Và Hành Tinh Muông Thú",
+          "price": 134000,
+          "quantity": 1,
+          "image": "/image/ebooknew4.webp",
+          "discount": 15,
+          "active": true
+        }
+      ],
+      "total": 213000,
+      "status": "Đã giao hàng",
+      "isNew": false,
+      "createdAt": "2026-01-30T08:50:58.594Z"
+    }
+  ]
+}

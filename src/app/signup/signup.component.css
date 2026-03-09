@@ -1,0 +1,43 @@
+/* CARD ĐĂNG KÝ – 1 MÀU DỊU MẮT */
+.signup-card {
+  background-color: #f5f7fb; /* xanh xám rất dịu */
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease;
+}
+
+/* TEXT */
+.signup-card h2,
+.signup-card label {
+  color: #2c3e50;
+}
+
+.signup-card p,
+.signup-card a {
+  color: #555;
+}
+
+/* INPUT */
+.signup-card .form-control {
+  background: #ffffff;
+  color: #333;
+}
+
+.signup-card .form-control::placeholder {
+  color: #aaa;
+}
+
+/* INVALID */
+.signup-card .is-invalid {
+  border-color: #dc3545;
+}
+
+/* LINK */
+.signup-card a {
+  text-decoration: underline;
+}
+
+/* HOVER RẤT NHẸ */
+.signup-card:hover {
+  transform: translateY(-1px);
+}

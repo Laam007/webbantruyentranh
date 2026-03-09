@@ -1,0 +1,227 @@
+/* ======= CHUNG ======= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* ======= CAROUSEL ======= */
+#carouselId {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 450px;            /* chiều cao khung */
+  object-fit: contain;      /* ✅ ảnh co vừa khung, không méo, không cắt */
+  object-position: center;  /* ✅ căn giữa */
+  background-color: #000;   /* hoặc #fff tùy nền, để ảnh không bị viền trống xấu */
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.03);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+/* ======= DANH MỤC ======= */
+.category-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    width: 120px;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    background-color: #ffe5e5;
+}
+
+.category-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.category-item p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.category-item.active {
+    background-color: #ff416c;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
+}
+
+/* ======= CARD TRUYỆN ======= */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.book-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.price {
+    color: #e60000;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+}
+
+.discount-badge {
+    background: #ff416c;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+/* ======= PHÂN TRANG ======= */
+.pagination .page-item.active .page-link {
+    background-color: #ff416c;
+    border-color: #ff416c;
+    color: white;
+}
+
+.page-link {
+    color: #ff416c;
+}
+
+.page-link:hover {
+    background-color: #ff416c;
+    color: white;
+}
+
+/* ======= CÂU NÓI HAY ======= */
+.quote-box {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-top: 30px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffcc00, #ff6b6b, #4dabf7);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: "Comic Sans MS", "Fredoka One", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+                0 4px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.quote-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.quote-text {
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+}
+/* ======= NÚT TẤT CẢ EBOOK ======= */
+.btn-danger {
+    background: linear-gradient(45deg, #ff512f, #ff416c);
+    border: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 65, 108, 0.5);
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+    .category-item {
+        width: 90px;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    .quote-box {
+        height: auto;
+        padding: 15px;
+        font-size: 15px;
+    }
+}
